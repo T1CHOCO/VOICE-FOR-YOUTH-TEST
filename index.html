@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voice for Youth | Child Rights & Protest Safety Portal India</title>
+    <meta name="description" content="Civic advocacy portal dedicated to legal rights, police accountability, and protecting minors in public demonstrations under Indian Law and International Child Rights Conventions.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome / Lucide Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js for data visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <div class="logo-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">VOICE FOR YOUTH</span>
+                    <span class="logo-subtitle">Child Rights & Protest Accountability</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#legal-rights" class="nav-link"><i class="fa-solid fa-scale-balanced"></i> Legal Rights</a>
+                <a href="#incident-tracker" class="nav-link"><i class="fa-solid fa-book-open-reader"></i> Incident Tracker</a>
+                <a href="#data-dashboard" class="nav-link"><i class="fa-solid fa-chart-line"></i> Data & Metrics</a>
+                <a href="#complaint-generator" class="nav-link"><i class="fa-solid fa-file-pen"></i> Report Generator</a>
+                <a href="#safety-guide" class="nav-link"><i class="fa-solid fa-user-shield"></i> Emergency Rights</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle Light/Dark Theme">
+                    <i class="fa-solid fa-moon moon-icon"></i>
+                    <i class="fa-solid fa-sun sun-icon"></i>
+                </button>
+                <a href="#complaint-generator" class="btn btn-primary btn-sm">
+                    <i class="fa-solid fa-bullhorn"></i> File Report Draft
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="hero-bg-overlay"></div>
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span> Protecting Minors & Student Protesters Under Law
+                </div>
+                <h1 class="hero-title">
+                    Demanding Accountability for <span class="gradient-text-accent">Child Rights & Youth</span> in Protests
+                </h1>
+                <p class="hero-description">
+                    Every child and student in India possesses fundamental constitutional rights to peaceful assembly and protection from state violence. Explore legal guarantees under the Juvenile Justice Act, documented report archives, and tools to challenge illegal force against minors.
+                </p>
+
+                <div class="hero-cta-group">
+                    <a href="#incident-tracker" class="btn btn-danger btn-lg">
+                        <i class="fa-solid fa-magnifying-glass-location"></i> Explore Incident Archive
+                    </a>
+                    <a href="#safety-guide" class="btn btn-outline btn-lg">
+                        <i class="fa-solid fa-id-card"></i> Emergency Minor Rights Card
+                    </a>
+                </div>
+
+                <div class="hero-stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-gavel"></i></div>
+                        <div class="stat-number">Article 21 & 19</div>
+                        <div class="stat-label">Right to Life & Peaceful Assembly</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-child-shield"></i></div>
+                        <div class="stat-number">JJ Act Sec 75</div>
+                        <div class="stat-label">Strict Penalty for Cruelty to Minors</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-globe"></i></div>
+                        <div class="stat-number">UNCRC Art. 37</div>
+                        <div class="stat-label">Protection from State Force & Detention</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fa-solid fa-file-shield"></i></div>
+                        <div class="stat-number">100% Free</div>
+                        <div class="stat-label">NCPCR Legal Complaint Builder</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Rights & Framework Section -->
+        <section class="section" id="legal-rights">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-building-columns"></i> Constitutional & International Protections</span>
+                    <h2 class="section-title">What the Law Says: Protection of Children in Assemblies</h2>
+                    <p class="section-description">
+                        Police officers and state authorities are legally barred from using force, lathi-charge, or arbitrary detention against children and minors during peaceful protests.
+                    </p>
+                </div>
+
+                <div class="search-filter-bar">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-search search-icon"></i>
+                        <input type="text" id="legal-search" placeholder="Search laws (e.g. Lathi-charge, Detention, Juvenile Police Unit, NHRC)...">
+                    </div>
+                    <div class="filter-pills">
+                        <button class="filter-pill active" data-category="all">All Protections</button>
+                        <button class="filter-pill" data-category="constitutional">Constitutional</button>
+                        <button class="filter-pill" data-category="juvenile">Juvenile Justice Act</button>
+                        <button class="filter-pill" data-category="nhrc">NHRC Guidelines</button>
+                        <button class="filter-pill" data-category="uncrc">UN Child Convention</button>
+                    </div>
+                </div>
+
+                <div class="cards-grid" id="legal-cards-container">
+                    <!-- Cards will be populated by app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Incident Archive & Documented Reports Section -->
+        <section class="section bg-surface" id="incident-tracker">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag tag-warning"><i class="fa-solid fa-triangle-exclamation"></i> Verified Case Archive</span>
+                    <h2 class="section-title">Documented Incidents of Force Against Minors & Students</h2>
+                    <p class="section-description">
+                        An archive of documented human rights violations, police action on student assemblies, court interventions, and national commission inquiries across India.
+                    </p>
+                </div>
+
+                <div class="tracker-controls">
+                    <div class="search-input-wrapper">
+                        <i class="fa-solid fa-filter filter-icon"></i>
+                        <input type="text" id="incident-search" placeholder="Search by location, year, or keywords (e.g. Delhi, Jamia, Agnipath, AMU)...">
+                    </div>
+                    <div class="select-group">
+                        <select id="region-select" class="custom-select">
+                            <option value="all">All Regions / States</option>
+                            <option value="Delhi">Delhi NCR</option>
+                            <option value="Uttar Pradesh">Uttar Pradesh</option>
+                            <option value="Bihar">Bihar</option>
+                            <option value="Punjab">Punjab & Haryana</option>
+                            <option value="West Bengal">West Bengal</option>
+                        </select>
+                        <select id="status-select" class="custom-select">
+                            <option value="all">All Inquiry Statuses</option>
+                            <option value="High Court Intervention">High Court Intervention</option>
+                            <option value="NHRC Order Issued">NHRC Order Issued</option>
+                            <option value="Pending Accountability">Pending Accountability</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="incidents-grid" id="incidents-container">
+                    <!-- Dynamic Incident Cards populated by app.js -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Data & Analytics Dashboard Section -->
+        <section class="section" id="data-dashboard">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag"><i class="fa-solid fa-chart-pie"></i> Empirical Data & Analytics</span>
+                    <h2 class="section-title">Child Rights & Police Accountability Metrics</h2>
+                    <p class="section-description">
+                        Data tracking reported incidents involving minors, progress of commission orders, and police reform recommendations.
+                    </p>
+                </div>
+
+                <div class="dashboard-grid">
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fa-solid fa-chart-column"></i> Incidents Reported Involving Minors/Students</h3>
+                            <span class="chart-subtitle">By Region / State Breakdown</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="regionChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-header">
+                            <h3><i class="fa-solid fa-chart-pie"></i> Status of Legal Complaints & NHRC Inquiries</h3>
+                            <span class="chart-subtitle">Case Outcome Resolution Distribution</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="statusChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="chart-card chart-card-wide">
+                        <div class="chart-header">
+                            <h3><i class="fa-solid fa-chart-line"></i> Juvenile Police Unit Compliance vs Reports Filed</h3>
+                            <span class="chart-subtitle">Year-on-Year Trend (2020 - 2026)</span>
+                        </div>
+                        <div class="chart-wrapper">
+                            <canvas id="trendChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report & Complaint Draft Generator Section -->
+        <section class="section bg-surface" id="complaint-generator">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag tag-primary"><i class="fa-solid fa-gavel"></i> Free Tool</span>
+                    <h2 class="section-title">NCPCR & Human Rights Complaint Draft Generator</h2>
+                    <p class="section-description">
+                        Generate a formatted legal complaint draft under the Juvenile Justice Act & Protection of Child Rights Act, ready to send to the National Commission for Protection of Child Rights (NCPCR) and NHRC.
+                    </p>
+                </div>
+
+                <div class="generator-container">
+                    <form id="complaint-form" class="generator-form">
+                        <div class="form-step-title"><i class="fa-solid fa-1"></i> Incident & Victim Details</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="complainant-name">Complainant / Reporter Name (or Anonymous Advocate)</label>
+                                <input type="text" id="complainant-name" required placeholder="e.g. Concerned Citizen / Parent Association">
+                            </div>
+                            <div class="form-group">
+                                <label for="victim-age">Age / Category of Minor(s) Involved</label>
+                                <input type="text" id="victim-age" required placeholder="e.g. Students aged 14-17 years">
+                            </div>
+                            <div class="form-group">
+                                <label for="incident-date">Date & Time of Incident</label>
+                                <input type="date" id="incident-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="incident-location">Location / Police Station Jurisdiction</label>
+                                <input type="text" id="incident-location" required placeholder="e.g. Near University Campus, New Delhi">
+                            </div>
+                        </div>
+
+                        <div class="form-step-title"><i class="fa-solid fa-2"></i> Alleged Violation & Authorities</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="authority-involved">Law Enforcement Agency / Officers</label>
+                                <input type="text" id="authority-involved" required placeholder="e.g. Local District Police / Reserve Force">
+                            </div>
+                            <div class="form-group">
+                                <label for="violation-type">Primary Violation Type</label>
+                                <select id="violation-type" class="custom-select" required>
+                                    <option value="Unlawful Force / Lathi-charge on Minors">Unlawful Force / Lathi-charge on Minors</option>
+                                    <option value="Illegal Detention Without Special Juvenile Police Unit">Illegal Detention Without Special Juvenile Police Unit</option>
+                                    <option value="Verbal Harassment & Intimidation of Students">Verbal Harassment & Intimidation of Students</option>
+                                    <option value="Denial of Medical Attention / Legal Counsel">Denial of Medical Attention / Legal Counsel</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label for="incident-summary">Summary of Facts & Evidence (Photos, Video Links, Witness statements)</label>
+                            <textarea id="incident-summary" rows="4" required placeholder="Describe what occurred, including any documented video evidence, injuries sustained, or witnesses present..."></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Legal Complaint Draft
+                        </button>
+                    </form>
+
+                    <div class="generator-preview-box" id="preview-box">
+                        <div class="preview-header">
+                            <span><i class="fa-solid fa-file-contract"></i> Generated Official Complaint Draft</span>
+                            <div class="preview-actions">
+                                <button class="btn btn-sm btn-outline" id="copy-draft-btn"><i class="fa-solid fa-copy"></i> Copy Text</button>
+                                <button class="btn btn-sm btn-primary" id="download-draft-btn"><i class="fa-solid fa-download"></i> Download Draft</button>
+                            </div>
+                        </div>
+                        <pre class="preview-content" id="draft-output">Fill in the form on the left to automatically generate a structured, legally grounded complaint draft addressed to the NCPCR and National Human Rights Commission.</pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Rights Card & Safety Guide Section -->
+        <section class="section" id="safety-guide">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag tag-success"><i class="fa-solid fa-shield-heart"></i> Citizen Emergency Pocket Guide</span>
+                    <h2 class="section-title">Emergency Minor Rights Card for Protests</h2>
+                    <p class="section-description">
+                        Keep this emergency pocket checklist saved on your mobile device or print it. If a minor or student is stopped or questioned by police, these fundamental rights apply immediately under Indian law.
+                    </p>
+                </div>
+
+                <div class="rights-card-wrapper">
+                    <div class="pocket-card" id="pocket-card-element">
+                        <div class="pocket-card-header">
+                            <div class="pocket-card-badge"><i class="fa-solid fa-scale-balanced"></i> EMERGENCY JUVENILE RIGHTS CARD</div>
+                            <span class="pocket-card-sub">Under Indian Juvenile Justice Act & Constitution Art. 21</span>
+                        </div>
+
+                        <div class="pocket-card-body">
+                            <div class="right-item">
+                                <div class="right-num">1</div>
+                                <div class="right-content">
+                                    <strong>No Lockup / Jail for Minors:</strong> Minors under 18 CANNOT be placed in a standard police lockup or jail. They must only be handled by a Child Welfare Officer or Special Juvenile Police Unit (SJPU).
+                                </div>
+                            </div>
+
+                            <div class="right-item">
+                                <div class="right-num">2</div>
+                                <div class="right-content">
+                                    <strong>No Force or Uniform Intimidation:</strong> Police personnel handling minors should ideally not wear uniforms or display weapons (JJ Rules 2016). Physical violence or lathi-charge against children is strictly illegal (Sec 75 JJ Act).
+                                </div>
+                            </div>
+
+                            <div class="right-item">
+                                <div class="right-num">3</div>
+                                <div class="right-content">
+                                    <strong>Immediate Parent & Lawyer Notification:</strong> Parents/Guardians and a legal aid lawyer must be informed immediately upon apprehension.
+                                </div>
+                            </div>
+
+                            <div class="right-item">
+                                <div class="right-num">4</div>
+                                <div class="right-content">
+                                    <strong>Right to Medical Examination:</strong> A complete medical checkup by a certified doctor is mandatory within 24 hours to document any injuries.
+                                </div>
+                            </div>
+
+                            <div class="right-item">
+                                <div class="right-num">5</div>
+                                <div class="right-content">
+                                    <strong>Bail is the Default Rule:</strong> Under Section 12 of JJ Act, bail is mandatory for juveniles regardless of bailable/non-bailable nature of the alleged offense.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pocket-card-footer">
+                            <div><i class="fa-solid fa-phone-volume"></i> <strong>Childline Emergency Helpline:</strong> 1098</div>
+                            <div><i class="fa-solid fa-phone"></i> <strong>NCPCR Toll-Free Helpline:</strong> 1800-121-2830</div>
+                        </div>
+                    </div>
+
+                    <div class="card-action-bar">
+                        <button class="btn btn-outline btn-lg" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Rights Card</button>
+                        <button class="btn btn-primary btn-lg" id="save-card-btn"><i class="fa-solid fa-floppy-disk"></i> Save Pocket Copy</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Detailed Case Inspection -->
+    <div class="modal-backdrop" id="case-modal">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-title">Case Inspection Details</h3>
+                <button class="modal-close" id="modal-close-btn">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Populated dynamically -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modal-close-footer">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-col footer-about">
+                <div class="brand-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <span class="logo-title">VOICE FOR YOUTH</span>
+                </div>
+                <p class="footer-desc">
+                    An independent non-partisan civic advocacy project dedicated to child rights, constitutional guarantees, peaceful assembly, and law enforcement accountability in India.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Legal Framework</h4>
+                <ul>
+                    <li><a href="#legal-rights">Juvenile Justice Act 2015</a></li>
+                    <li><a href="#legal-rights">UN Convention on Rights of Child</a></li>
+                    <li><a href="#legal-rights">Constitution Article 19 & 21</a></li>
+                    <li><a href="#legal-rights">NHRC Guidelines on Protests</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Official Statutory Bodies</h4>
+                <ul>
+                    <li><a href="https://ncpcr.gov.in" target="_blank" rel="noopener">NCPCR Official Portal <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li><a href="https://nhrc.nic.in" target="_blank" rel="noopener">National Human Rights Commission <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                    <li><a href="https://wcd.nic.in" target="_blank" rel="noopener">Ministry of Women & Child Dev <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Emergency Helplines</h4>
+                <div class="helpline-badge"><i class="fa-solid fa-phone"></i> Childline: <strong>1098</strong></div>
+                <div class="helpline-badge"><i class="fa-solid fa-phone"></i> National Legal Services: <strong>15100</strong></div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container text-center">
+                <p>&copy; 2026 Voice for Youth | Public Interest Civic Advocacy & Human Rights Educational Portal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
